@@ -14,7 +14,7 @@ foodbridge.piragenth.dev {
 
 # eBay Price Monitor
 ebay.piragenth.dev {
-    reverse_proxy ebay:8501
+    reverse_proxy ebay-frontend:8501
 }
 
 # OpenGym
