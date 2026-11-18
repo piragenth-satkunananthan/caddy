@@ -22,5 +22,6 @@ volumes:
   caddy_config:
 
 networks:
-  foodbridge-network:
-    driver: bridge
+  proxy:
+    external: true
+    name: proxy
