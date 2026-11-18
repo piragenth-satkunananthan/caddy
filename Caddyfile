@@ -1,13 +1,24 @@
+
+# FoodBridge
 foodbridge.piragenth.dev {
     @api path /api/*
-    reverse_proxy @api backend:5000
 
-    reverse_proxy foodbridge-frontend:80
+    handle @api {
+        reverse_proxy foodbridge-api:5000
+    }
+
+    handle {
+        reverse_proxy foodbridge:80
+    }
 }
+
+# eBay Price Monitor
 ebay.piragenth.dev {
-    reverse_proxy ebay_frontend:8501
+    reverse_proxy ebay:8501
 }
 
+# OpenGym
 gym.piragenth.dev {
-    reverse_proxy opengym-web-1:8080
+    reverse_proxy gym:80
 }
+
